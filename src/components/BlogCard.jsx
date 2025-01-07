@@ -3,7 +3,7 @@ import React from "react";
 
 const BlogCard = () => {
   return (
-    <div className="col-12 col-md-2 col-lg-3">
+    <div className="col-12 col-md-2 col-lg-3 mb-4">
             <div className="card  border-0 shadow-lg">
              <img src="https://placehold.co/600X400" className="card-img-top" />
               <div className="card-body">

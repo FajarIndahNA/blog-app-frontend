@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BlogCard from './components/BlogCard';
+import { Route, Routes } from 'react-router-dom';
+import Blogs from './components/Blogs';
+import CreateBlog from './components/CreateBlog';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -10,22 +12,16 @@ function App() {
 
   return (
     <>
-     <div className='bg-dark text-center py-2 shadow-lg'>
-         <h1 className='text-white'>React Laravel Blog</h1>
+    <div className='bg-dark text-center py-2 shadow-lg'>
+         <h1 className='text-white'>R-Blog</h1>
      </div>
-     <div className='container'>
-        <div className="d-flex justify-content-between pt-5 mb-4">
-          <h4>Blogs</h4>
-          <a href="#" className="btn btn-dark">Create</a>
-        </div>
 
-        <div className="row">
-            <BlogCard/>
-            <BlogCard/>
-            <BlogCard/>
-            <BlogCard/>
-        </div>
-     </div>
+    <Routes>
+      {/* panggil path grid Blogs */}
+      <Route path='/' element={ <Blogs />} />
+      <Route path='/create' element={ <CreateBlog />} />
+
+    </Routes>
     </>
   )
 }
