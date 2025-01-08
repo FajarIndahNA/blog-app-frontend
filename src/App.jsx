@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import Blogs from './components/Blogs';
 import CreateBlog from './components/CreateBlog';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -22,6 +24,7 @@ function App() {
       <Route path='/create' element={ <CreateBlog />} />
 
     </Routes>
+    <ToastContainer />
     </>
   )
 }

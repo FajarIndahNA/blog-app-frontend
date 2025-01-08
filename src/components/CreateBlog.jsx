@@ -1,11 +1,15 @@
 import React, { useState }  from 'react';
 import Editor from 'react-simple-wysiwyg';
-import { useForm} from "react-hook-form"
+import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const CreateBlog = () => {
     // npm install react-simple-wysiwyg
     const [html, setHtml] = useState('');
+     const navigate = useNavigate();
+
     function onChange(e) {
         setHtml(e.target.value);
     }
@@ -17,8 +21,21 @@ const CreateBlog = () => {
      formState: { errors },
    } = useForm();
 
-     const formSubmit = (data) => {
+   //menghubungkan dengan back end database
+     const formSubmit = async (data) => {
+          const newData = {...data, "description": html}
+          const res = await fetch('http://localhost:8000/api/blogs',{
+               method: 'POST',
+               headers:{
+                    'Content-type':'aplication/json'
+               },
+               body: JSON.stringify(newData)
+          });
 
+          // const notify = () => toast("Wow so easy!");
+          toast("Blog added successfully!");
+          navigate('/');
+          // console.log(newData)
      }
   return (
     <div className='container mb-5'>

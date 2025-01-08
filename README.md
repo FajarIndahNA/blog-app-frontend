@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 # paket
 npm i react-simple-wysiwyg
 npm install react-hook-form
+npm i react-toastify
