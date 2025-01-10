@@ -1,11 +1,22 @@
 // rafce
-import React from "react";
+import React from "react"
 
 const BlogCard = ({blog}) => {
+
+  const showImage = (img) => {
+    // console.log(img);
+    return (img) ? 'http://localhost:8000/uploads/blogs/'+img : "https://placehold.co/600X400";
+  }
+  // const showImage = (img) => {
+  //   const imageUrl = img ? `http://localhost:8000/uploads/blogs/${img}` : "https://placehold.co/600X400";
+  //   console.log(imageUrl); // Log URL untuk memastikan
+  //   return imageUrl;
+  // }
+
   return (
     <div className="col-12 col-md-2 col-lg-3 mb-4">
             <div className="card  border-0 shadow-lg">
-             <img src="https://placehold.co/600X400" className="card-img-top" />
+             <img src={showImage(blog.image)} className="card-img-top" />
               <div className="card-body">
                   <h2 className='h5'>{blog.title}</h2>
                   <p>{blog.shortDesc}</p>

@@ -32,7 +32,7 @@ const Blogs = () =>{
 
               // })
               blogs && blogs.map((blog) => {
-                return <BlogCard key={blog.id} blog={blog} />;
+                return <BlogCard key={blog.id} blog={blog}/>;
               })
             }
         </div>
