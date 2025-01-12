@@ -27,10 +27,6 @@ const Blogs = () =>{
         <div className="row">
           {/* grid blogs */}
             {
-              // (blogs) && blogs.map(()=>{
-              //   return <BlogCard blog={blog}/>
-
-              // })
               blogs && blogs.map((blog) => {
                 return <BlogCard key={blog.id} blog={blog}/>;
               })
